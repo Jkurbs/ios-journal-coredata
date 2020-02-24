@@ -14,7 +14,7 @@ class CoreDataStack {
     
     lazy var container: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "Journal")
+        let container = NSPersistentContainer(name: "Entry")
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("message: \(error)")
@@ -22,8 +22,8 @@ class CoreDataStack {
         }
         return container
     }()
-    
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }
 }
+
