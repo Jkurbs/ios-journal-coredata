@@ -18,16 +18,6 @@ enum Mood: String, CaseIterable {
 
 class EntryController {
     
-    var entries: [Entry] {
-        let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
-        do {
-            return try CoreDataStack.shared.mainContext.fetch(fetchRequest)
-        } catch {
-            NSLog("Error fetching tasks: \(error)")
-            return []
-        }
-    }
-    
     // Create
     func create(identifier: String, title : String, bodyText: String?, mood: String, timestamp: Date) {
         let _ = Entry(identifier: identifier, title: title, bodyText: bodyText, mood: mood, timestamp: timestamp)

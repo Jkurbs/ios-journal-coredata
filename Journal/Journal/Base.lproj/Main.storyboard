@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Entries Table View Controller-->
+        <!--Entries-->
         <scene sceneID="RYG-tr-DKI">
             <objects>
                 <tableViewController id="vrg-uW-gSU" customClass="EntriesTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="vrg-uW-gSU" id="Lbj-St-1qO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TeG-2x-Vtq">
+                    <navigationItem key="navigationItem" title="Entries" id="TeG-2x-Vtq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O91-Zd-dd7">
                             <connections>
                                 <segue destination="9EP-0A-k1r" kind="show" identifier="AddEntry" id="cWg-2v-gQj"/>
@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="663.768115942029" y="87.723214285714278"/>
         </scene>
-        <!--Entry Detail View Controller-->
+        <!--Entry details-->
         <scene sceneID="TiH-C0-uOh">
             <objects>
                 <viewController id="9EP-0A-k1r" customClass="EntryDetailViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FKT-Ed-yDz" firstAttribute="trailing" secondItem="HLV-3Z-Oi1" secondAttribute="trailing" constant="20" id="CvY-oL-w45"/>
                             <constraint firstItem="HLV-3Z-Oi1" firstAttribute="top" secondItem="FKT-Ed-yDz" secondAttribute="top" constant="26" id="LEQ-yA-bGp"/>
@@ -126,7 +126,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FKT-Ed-yDz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QEY-AU-yVX">
+                    <navigationItem key="navigationItem" title="Entry details" id="QEY-AU-yVX">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kU9-5E-tHz">
                             <connections>
                                 <action selector="saveEntry:" destination="9EP-0A-k1r" id="b68-iT-FJu"/>
