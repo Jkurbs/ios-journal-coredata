@@ -33,6 +33,7 @@
 		6D1F11B124046168004C42C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D1F11B324046168004C42C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D1F11BA240462CF004C42C2 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		6D555BB92405B81400F8A965 /* Entry 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Entry 2.xcdatamodel"; sourceTree = "<group>"; };
 		6D91A769240469320001824E /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		6D91A77024046D670001824E /* Entry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entry.xcdatamodel; sourceTree = "<group>"; };
 		6DCC731C24047741000B19BF /* Entry+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Convenience.swift"; sourceTree = "<group>"; };
@@ -399,9 +400,10 @@
 		6D91A76F24046D670001824E /* Entry.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				6D555BB92405B81400F8A965 /* Entry 2.xcdatamodel */,
 				6D91A77024046D670001824E /* Entry.xcdatamodel */,
 			);
-			currentVersion = 6D91A77024046D670001824E /* Entry.xcdatamodel */;
+			currentVersion = 6D555BB92405B81400F8A965 /* Entry 2.xcdatamodel */;
 			path = Entry.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

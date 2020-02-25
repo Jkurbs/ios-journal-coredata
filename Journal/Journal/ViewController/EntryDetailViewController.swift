@@ -14,6 +14,7 @@ class EntryDetailViewController: UIViewController {
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
+    @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     
     // MARK: - Properties
     
@@ -34,24 +35,35 @@ class EntryDetailViewController: UIViewController {
     
     @IBAction func saveEntry(_ sender: Any) {
         
+        let body = bodyTextView.text
+        let id = randomId()
+        let date = Date()
+        let moodIndex = segmentedCtrl.selectedSegmentIndex
+        let mood = Mood.allCases[moodIndex]
+        
         if let entryController = entryController, let title = titleField.text {
             if let entry = entry {
-                let body = bodyTextView.text
-                let date = Date()
-                entryController.update(entrie: entry, title: title, bodyText: body, timeStamp: date)
+                entryController.update(entry: entry, title: title, bodyText: body, mood: mood.rawValue, timeStamp: date)
             } else {
-                let body = bodyTextView.text
-                let id = randomId()
-                let date = Date()
-                entryController.create(identifier: id, title: title, bodyText: body, timestamp: date)
+                entryController.create(identifier: id, title: title, bodyText: body, mood: mood.rawValue, timestamp: date)
             }
             navigationController?.popViewController(animated: true)
         }
     }
     
     func updateViews() {
-        titleField.text = entry?.title
-        bodyTextView.text = entry?.bodyText
+        
+        guard let entry = entry else { return }
+        titleField.text = entry.title
+        bodyTextView.text = entry.bodyText
+        
+        var mood: Mood
+        if let entrymood = entry.mood {
+            mood = Mood(rawValue: entrymood)!
+        } else {
+            mood = .neutral
+        }
+        segmentedCtrl.selectedSegmentIndex = Mood.allCases.firstIndex(of: mood) ?? 1
     }
     
     func randomId() -> String {

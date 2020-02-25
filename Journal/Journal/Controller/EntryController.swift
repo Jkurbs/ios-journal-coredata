@@ -10,6 +10,12 @@
 import CoreData
 import Foundation
 
+enum Mood: String, CaseIterable {
+    case sad = "🙁"
+    case neutral = "😐"
+    case happy = "🙂"
+}
+
 class EntryController {
     
     var entries: [Entry] {
@@ -23,16 +29,17 @@ class EntryController {
     }
     
     // Create
-    func create(identifier: String, title : String, bodyText: String?, timestamp: Date) {
-        let _ = Entry(identifier: identifier, title: title, bodyText: bodyText, timestamp: timestamp)
+    func create(identifier: String, title : String, bodyText: String?, mood: String, timestamp: Date) {
+        let _ = Entry(identifier: identifier, title: title, bodyText: bodyText, mood: mood, timestamp: timestamp)
         saveToPersistentStore()
     }
     
     // Update
-    func update(entrie: Entry, title : String, bodyText: String?, timeStamp: Date) {
-        entrie.bodyText = bodyText
-        entrie.title = title
-        entrie.timestamp = timeStamp
+    func update(entry: Entry, title : String, bodyText: String?, mood: String, timeStamp: Date) {
+        entry.bodyText = bodyText
+        entry.title = title
+        entry.mood = mood
+        entry.timestamp = timeStamp
         saveToPersistentStore()
     }
     
